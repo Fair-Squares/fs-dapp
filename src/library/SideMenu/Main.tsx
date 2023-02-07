@@ -54,7 +54,7 @@ export const Main = () => {
           />
         </React.Fragment>
         {role === 'INVESTOR' && (
-          <React.Fragment key="sidemenu_page_dashboard">
+          <React.Fragment key="sidemenu_page_investors">
             <Primary
               name="Investors"
               to="/investors"
