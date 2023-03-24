@@ -84,7 +84,7 @@
   "scripts": {
     "start": "react-scripts start",
     "predeploy": "yarn run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build ",
     "build": "react-scripts build",
     "test": "jest",
     "eject": "react-scripts eject",
@@ -107,5 +107,5 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "/"
+  "homepage": "/fs-dapp/"
 }
