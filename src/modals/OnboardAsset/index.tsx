@@ -24,6 +24,7 @@ export const OnboardAsset = () => {
 
   const [price, setPrice] = useState(0);
   const [metadata, setMetadata] = useState<string>('');
+  const [maxTenants, setMaxTenants] = useState(0);
   const [pending, setPending] = useState(false);
   const [tx, setTx] = useState<AnyApi>(null);
 
@@ -75,6 +76,23 @@ export const OnboardAsset = () => {
         <InputWrapper>
           <div className="inner">
             <section>
+              <h3>{t('sellers.maxTenants')}:</h3>
+              <div className="input">
+                <div>
+                  <input
+                    type="number"
+                    placeholder={t('sellers.phMaxTenants') as string}
+                    value={maxTenants || ''}
+                    onChange={(e) => setMaxTenants(Number(e.target.value))}
+                  />
+                </div>
+              </div>
+            </section>
+          </div>
+        </InputWrapper>
+        <InputWrapper>
+          <div className="inner">
+            <section>
               <h3>{t('sellers.metadata')}:</h3>
               <div className="input">
                 <div>
@@ -102,7 +120,8 @@ export const OnboardAsset = () => {
                       'HOUSES',
                       unitToPlanckBn(price.toString(), decimals),
                       metadata,
-                      true
+                      true,
+                      maxTenants
                     )
                   : null
               );

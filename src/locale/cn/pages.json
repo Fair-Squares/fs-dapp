@@ -228,6 +228,8 @@
       "onboardingSuccess": "Onboarding Success",
       "phAssetPrice": "Input price of the asset",
       "phMetadata": "Write description of the asset",
+      "phMaxTenants": "The maximum amount of people that can live in the house",
+      "maxTenants": "Tenants",
       "price": "Price",
       "submit": "Submit"
     },
