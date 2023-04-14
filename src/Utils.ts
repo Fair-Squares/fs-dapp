@@ -17,6 +17,24 @@ export const clipAddress = (val: string) => {
   )}`;
 };
 
+/**
+ *The proposal last for 12hrs, remaing time is obtained by subtracting the time passed(from creation to now)
+ *with the total time the proposal is active(12hrs)
+ * @param created: the time the proposal was created in ms
+ */
+
+export const calculateRemainingTime = (created: number): number => {
+  const twelveHoursInMs = 12 * 60 * 60 * 1000;
+  const now = new Date().getTime();
+  const expirationTime = created + twelveHoursInMs;
+  const remainingTimeInMs = expirationTime - now;
+  const remainingTimeInHours = Math.max(
+    0,
+    Math.floor(remainingTimeInMs / (60 * 60 * 1000))
+  );
+  return remainingTimeInHours;
+};
+
 export const remToUnit = (rem: string) => {
   const remAsNumber = Number(rem.slice(0, rem.length - 3));
   return (
