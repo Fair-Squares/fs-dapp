@@ -13,7 +13,6 @@ import { useSubmitExtrinsic } from 'library/Hooks/useSubmitExtrinsic';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnyApi } from 'types';
-import { calculateRemainingTime } from 'Utils';
 import { CouncilVoteItemWrapper } from './Wrappers';
 
 interface CouncilProposalProps {
@@ -52,7 +51,6 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
   const [pending, setPending] = useState(false);
   const [tx, setTx] = useState<AnyApi>(null);
   const [isOver, setOver] = useState(false);
-  const remaining = calculateRemainingTime(asset.created);
 
   const initStates = () => {
     setUserVote(undefined);
@@ -142,7 +140,6 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
       asset={asset}
       hash={hash}
       ayes={numAyes}
-      remaining={remaining}
       nays={numNays}
       vote={userVote}
       onVote={onVote}
