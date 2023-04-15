@@ -10,6 +10,7 @@ import { useNotifications } from 'contexts/Notifications';
 import { useVoting } from 'contexts/Voting';
 import { AssetProposal } from 'library/AssetProposal';
 import { useSubmitExtrinsic } from 'library/Hooks/useSubmitExtrinsic';
+import { useTimeLeft } from 'library/Hooks/useTimeLeft';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnyApi } from 'types';
@@ -41,6 +42,7 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
   const { openModalWith } = useModal();
   const { notifyError, notifySuccess } = useNotifications();
   const { fetchProposals } = useVoting();
+  const { timeleft } = useTimeLeft();
   const [councilVote, setCouncilVoteResult] = useState<CouncilVoteResult>(null);
 
   const numAyes = councilVote?.ayes.length || 0;
@@ -144,6 +146,7 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
       vote={userVote}
       onVote={onVote}
       threshold={councilVote?.threshold}
+      remaining={timeleft?.raw.hours}
       canVote={
         !pending &&
         address !== undefined &&
