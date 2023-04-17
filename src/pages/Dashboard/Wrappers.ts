@@ -32,6 +32,9 @@ export const ActiveAccounWrapper = styled.div`
       flex: 1 1 0%;
       min-height: 1.8rem;
       overflow: hidden;
+      color: ${networkColor};
+      font-size: 1.4rem;
+      font-weight: 900;
 
       .name {
         bottom: 0.1rem;
