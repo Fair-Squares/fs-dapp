@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/fs-dapp/static/css/main.0dc664b0.css",
-    "main.js": "/fs-dapp/static/js/main.7de46d55.js",
+    "main.js": "/fs-dapp/static/js/main.7508bc8c.js",
     "static/js/714.10d1ee45.chunk.js": "/fs-dapp/static/js/714.10d1ee45.chunk.js",
     "static/js/267.13be70bd.chunk.js": "/fs-dapp/static/js/267.13be70bd.chunk.js",
     "static/js/604.5338edb1.chunk.js": "/fs-dapp/static/js/604.5338edb1.chunk.js",
     "static/js/69.9cc0cb96.chunk.js": "/fs-dapp/static/js/69.9cc0cb96.chunk.js",
-    "static/js/155.ccd1577c.chunk.js": "/fs-dapp/static/js/155.ccd1577c.chunk.js",
+    "static/js/155.a59c10cb.chunk.js": "/fs-dapp/static/js/155.a59c10cb.chunk.js",
     "static/js/819.cb860e72.chunk.js": "/fs-dapp/static/js/819.cb860e72.chunk.js",
     "static/js/514.623c44e8.chunk.js": "/fs-dapp/static/js/514.623c44e8.chunk.js",
     "static/js/569.6441a946.chunk.js": "/fs-dapp/static/js/569.6441a946.chunk.js",
@@ -42,7 +42,7 @@
     "static/media/cross.svg": "/fs-dapp/static/media/cross.8364276c40f7da112b31c7c66cc7e86c.svg",
     "static/media/info-outline.svg": "/fs-dapp/static/media/info-outline.710ee0b66a632101a3e85de51b365ddb.svg",
     "main.0dc664b0.css.map": "/fs-dapp/static/css/main.0dc664b0.css.map",
-    "main.7de46d55.js.map": "/fs-dapp/static/js/main.7de46d55.js.map",
+    "main.7508bc8c.js.map": "/fs-dapp/static/js/main.7508bc8c.js.map",
     "514.623c44e8.chunk.js.map": "/fs-dapp/static/js/514.623c44e8.chunk.js.map",
     "569.6441a946.chunk.js.map": "/fs-dapp/static/js/569.6441a946.chunk.js.map",
     "712.73c53139.chunk.js.map": "/fs-dapp/static/js/712.73c53139.chunk.js.map",
@@ -51,6 +51,6 @@
   },
   "entrypoints": [
     "static/css/main.0dc664b0.css",
-    "static/js/main.7de46d55.js"
+    "static/js/main.7508bc8c.js"
   ]
 }
