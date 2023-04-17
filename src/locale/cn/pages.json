@@ -222,11 +222,13 @@
       "tenantSessionSuccess": "Successfully launched a tenant session"
     },
     "sellers": {
+      "maxTenants": "Tenants",
       "metadata": "Metadata",
       "onboardAsset": "Onboard an asset",
       "onboardingFailed": "Failed to onboard an asset",
       "onboardingSuccess": "Onboarding Success",
       "phAssetPrice": "Input price of the asset",
+      "phMaxTenants": "The maximum amount of people that can live in the house",
       "phMetadata": "Write description of the asset",
       "price": "Price",
       "submit": "Submit"

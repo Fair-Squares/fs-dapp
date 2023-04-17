@@ -23,7 +23,7 @@ export const NETWORKS: Networks = {
   fs: {
     name: 'Fair Squares',
     endpoints: {
-      rpc: 'ws://127.0.0.1:9944',
+      rpc: 'wss://rpc.fair-squares.nl',
       lightClient: JSON.stringify(spec),
     },
     colors: {
