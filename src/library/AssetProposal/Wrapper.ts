@@ -89,6 +89,10 @@ export const VoteStats = styled.div`
   .no:enabled:hover {
     transform: scale(1.2);
   }
+  .tx-clock {
+    flex-direction: row;
+    display: flex-wrap;
+  }
 `;
 
 export const VoteButton = styled.button<{ voted?: boolean }>`
