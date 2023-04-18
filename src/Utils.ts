@@ -17,6 +17,37 @@ export const clipAddress = (val: string) => {
   )}`;
 };
 
+/**
+ * convert ms to remaining hours
+ * @param ms
+ * @returns remaining hours, minutes and seconds
+ */
+export const calculateRemainingTime = (
+  created: number
+): { hours: number; minutes: number; seconds: number } => {
+  const twelveHoursInMs = 12 * 60 * 60 * 1000;
+  const now = new Date().getTime();
+  const expirationTime = created + twelveHoursInMs;
+  const remainingTimeInMs = expirationTime - now;
+  const remainingTimeInHours = Math.max(
+    0,
+    Math.floor(remainingTimeInMs / (60 * 60 * 1000))
+  );
+  const remainingTimeInMinutes = Math.max(
+    0,
+    Math.floor((remainingTimeInMs % (60 * 60 * 1000)) / (60 * 1000))
+  );
+  const remainingTimeInSeconds = Math.max(
+    0,
+    Math.floor((remainingTimeInMs % (60 * 1000)) / 1000)
+  );
+  return {
+    hours: remainingTimeInHours,
+    minutes: remainingTimeInMinutes,
+    seconds: remainingTimeInSeconds,
+  };
+};
+
 export const remToUnit = (rem: string) => {
   const remAsNumber = Number(rem.slice(0, rem.length - 3));
   return (

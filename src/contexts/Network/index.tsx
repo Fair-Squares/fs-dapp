@@ -27,6 +27,7 @@ export const NetworkMetricsProvider = ({
   const [totalUsers, setTotalUsers] = useState(0);
   const [decimals, setDecimals] = useState(0);
   const [blockNumber, setBlockNumber] = useState(0);
+  const [timestamp, setTimestamp] = useState(0);
 
   // store network metrics unsubscribe
   const [unsub, setUnsub] = useState<AnyApi>(undefined);
@@ -51,12 +52,14 @@ export const NetworkMetricsProvider = ({
           api.query.housingFundModule.fundBalance,
           api.query.roleModule.totalMembers,
           api.query.system.number,
+          api.query.timestamp.now,
         ],
-        ([_fund, _totalUsers, _blockNumber]: AnyApi) => {
+        ([_fund, _totalUsers, _blockNumber, _timestamp]: AnyApi) => {
           setTotalFund(_fund.total);
           setDecimals(api.registry.chainDecimals[0]);
           setBlockNumber(_blockNumber);
           setTotalUsers(_totalUsers);
+          setTimestamp(_timestamp.toNumber());
         }
       );
       setUnsub(_unsub);
@@ -70,6 +73,7 @@ export const NetworkMetricsProvider = ({
         totalHousingFund,
         blockNumber,
         decimals,
+        timestamp,
       }}
     >
       {children}

@@ -6,6 +6,7 @@ import { Asset } from 'contexts/Assets/types';
 import { useCouncil } from 'contexts/Council';
 import { CouncilVoteResult } from 'contexts/Council/types';
 import { useModal } from 'contexts/Modal';
+import { useNetworkMetrics } from 'contexts/Network';
 import { useNotifications } from 'contexts/Notifications';
 import { useVoting } from 'contexts/Voting';
 import { AssetProposal } from 'library/AssetProposal';
@@ -13,6 +14,7 @@ import { useSubmitExtrinsic } from 'library/Hooks/useSubmitExtrinsic';
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { AnyApi } from 'types';
+import { calculateRemainingTime } from 'Utils';
 import { CouncilVoteItemWrapper } from './Wrappers';
 
 interface CouncilProposalProps {
@@ -41,6 +43,7 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
   const { openModalWith } = useModal();
   const { notifyError, notifySuccess } = useNotifications();
   const { fetchProposals } = useVoting();
+  const { timestamp } = useNetworkMetrics();
   const [councilVote, setCouncilVoteResult] = useState<CouncilVoteResult>(null);
 
   const numAyes = councilVote?.ayes.length || 0;
@@ -144,6 +147,7 @@ export const CouncilProposal = ({ asset }: CouncilProposalProps) => {
       vote={userVote}
       onVote={onVote}
       threshold={councilVote?.threshold}
+      remaining={calculateRemainingTime(timestamp)}
       canVote={
         !pending &&
         address !== undefined &&

@@ -9,4 +9,5 @@ export const defaultNetworkContext: NetworkMetricsContextInterface = {
   totalUsers: 0,
   decimals: 12,
   blockNumber: 0,
+  timestamp: 0,
 };

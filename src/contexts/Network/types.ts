@@ -8,4 +8,5 @@ export interface NetworkMetricsContextInterface {
   totalUsers: number;
   decimals: number;
   blockNumber: number;
+  timestamp: number;
 }
