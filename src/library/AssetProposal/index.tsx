@@ -24,13 +24,18 @@ import {
   VoteStatsWrapper,
 } from './Wrapper';
 
+interface RemainingTime {
+  hours: number;
+  minutes: number;
+  seconds: number;
+}
 interface AssetProposalProps {
   asset: Asset;
   hash: string;
   ayes: number;
   nays: number;
   threshold?: number;
-  remaining?: number;
+  remaining?: RemainingTime;
   vote: boolean | undefined;
   canVote: boolean;
   canClose?: boolean;
@@ -144,7 +149,10 @@ export const AssetProposal = ({
               {remaining !== undefined && (
                 <VoteStats>
                   <FontAwesomeIcon icon={faClock} />
-                  <p>{remaining}</p>
+                  <p className="tx-clock">
+                    {remaining.hours} h : {remaining.minutes} m:{' '}
+                    {remaining.seconds} s
+                  </p>
                 </VoteStats>
               )}
             </VoteStatsWrapper>
