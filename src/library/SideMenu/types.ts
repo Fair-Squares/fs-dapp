@@ -19,7 +19,7 @@ export interface PrimaryProps {
   to: string;
   icon?: React.ReactNode;
   animate?: AnyJson;
-  action: undefined | { type: string; status: string; text?: string };
+  action?: undefined | { type: string; status: string; text?: string };
   minimised: number;
 }
 
